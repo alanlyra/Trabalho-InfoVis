@@ -1,0 +1,21 @@
+@import
+    'partials/_base.scss',
+    'partials/_layout.scss',
+    'partials/_conteudo.scss',
+    'tipografia.scss';
+
+
+$borda-arredondada: 4px;
+
+body{
+    font-family: $font-padrao;
+    font-size: 13px;
+}
+
+input{
+    -webkit-border-radius: $borda-arredondada;
+    -moz-border-radius: $borda-arredondada;
+    -ms-border-radius: $borda-arredondada;
+    -o-border-radius: $borda-arredondada;
+    border-radius: $borda-arredondada;
+}

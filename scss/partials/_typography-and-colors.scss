@@ -1,0 +1,34 @@
+$color-azul-menu: #2C82C9;
+$color-azul-menu--hover: #2969B0;
+$color-roxo-user-profile--hover: #475577;
+$color-laranja-localizacao: #F37934;
+$color-cinza-campo: #EFEFEF;
+$color-campo: #EFEFEF;
+$colorTexto: #28324E;
+
+$color-font-header-title: #393939;
+$color-font-content-title: #2C82C9;
+$color-font-text: #7c7c7c;
+$color-delete: #e25041;
+$color-add: #41A85F;
+$color-save: #41A85F;
+$color-btn-next: #FBA026;
+
+$font-title: 'Anton', sans-serif;
+$font-title-table: 'roboto', sans-serif;
+
+%table-title{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+%title{
+  font-family: $font-title;
+  font-size: 24px;
+  color: $color-font-content-title;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
