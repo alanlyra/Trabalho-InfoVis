@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Roboto:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Trabalho InfoVis</title>
+        <link rel="stylesheet" type="text/css" href="/css/default.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- I recommend you host this file on your own, since this will change without warning -->
+  <script src="http://datamaps.github.io/scripts/datamaps.world.min.js?v=1"></script>
+
+    </head>
+
+
+<body onload="javascript:onLoad()">
+
+	<div class="site">
+		<header class="l-cabecalho">
+
+ 				<div class="container">
+
+					<a href="/index.html" class="logo-defensoria">
+					</a>
+
+				<table width=100%>
+
+				    <tr class="menubar">
+					<td width=100% style="background-color:#1abc9c">
+					    <table>
+						<tr>
+						    <div class="dropdown">
+				  <button class="dropbtn" onclick="javascript:startMap();">Clube 1</button>
+
+				  <button class="dropbtn" onclick="javascript:startMap2();">Clube 2</button>
+
+				</div>
+						</tr>
+					    </table>
+					</td>
+				    </tr>
+				</table>
+ 				</div>
+		</header>
+
+		<main>
+			<header class="main-header">
+			        <h2 class="titulo-pagina">
+				   <span class="titulo-subsecao">Trabalho InfoVis</span>
+			        </h2>
+
+			</header>
+			<div class="container">
+
+
+				<br>
+				<table>
+				<tr>
+
+				    <td width=470 valign=top>
+					<h3 id="PanelClub" class="subtitle-settings" style="visibility: hidden;">
+					    <span id="mediaName" class="subtitle-box"></span>
+					</h3>
+					<!-- Club Details Panel-->
+
+					<h3 id="PanelClubDetails" class="subtitle-settings" style="visibility: hidden;">
+					    <span class="subtitle-box">Clube</span>
+					</h3>
+					<!-- Map Panel-->
+
+          <div id="container1" style="position: relative; width: 100%;"></div>
+
+
+				    </td>
+				</tr>
+				</table>
+
+
+			</div>
+		</main>
+
+		<footer class="l-footer">
+      	<span class="versao-sistema">  </span>
+
+    </footer>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.bundle.min.js"></script>
+</body>
+
+<script>
+
+ function startMap() {
+  d3.csv("./cities.csv", function(json){
+    //sample of the arc plugin
+    map.arc([
+     {
+      origin: {
+          latitude: 40.639722,
+          longitude: 73.778889
+      },
+      destination: {
+          latitude: -14.235004,
+          longitude: -51.92528
+      }
+    },
+      {
+      origin: {
+          latitude: 70.639722,
+          longitude: 73.778889
+      },
+      destination: {
+          latitude: -14.235004,
+          longitude: -51.92528
+      }
+    },
+    {
+        origin: {
+            latitude: 30.194444,
+            longitude: -97.67
+        },
+        destination: {
+            latitude: -14.235004,
+            longitude: -51.92528
+        }
+    }
+    ], {strokeWidth: 6});
+
+     //bubbles, custom popup on hover template
+   map.bubbles([
+     {name: 'Hot', latitude: 40.639722, longitude: 73.778889, radius: 10, fillKey: 'gt50'},
+     {name: 'Chilly', latitude: 70.639722, longitude: 73.778889, radius: 18, fillKey: 'lt50'},
+     {name: 'Hot again', latitude: 30.194444, longitude: -97.67, radius: 8, fillKey: 'gt50'},
+
+   ], {
+     popupTemplate: function(geo, data) {
+       return "<div class='hoverinfo'>It is " + data.name + "</div>";
+     }
+   });
+  });
+ }
+
+ function startMap2() {
+      d3.csv("./cities.csv", function(json){
+       //sample of the arc plugin
+       map.arc([
+        {
+         origin: {
+             latitude: 73.778889,
+             longitude: 40.639722
+         },
+         destination: {
+           latitude: 70.639722,
+           longitude: 73.778889
+         }
+       },
+         {
+         origin: {
+             latitude: 30.194444,
+             longitude: 73.778889
+         },
+         destination: {
+             latitude: 70.639722,
+             longitude: 73.778889
+         }
+       },
+       {
+           origin: {
+               latitude: 30.194444,
+               longitude: -97.67
+           },
+           destination: {
+             latitude: 70.639722,
+             longitude: 73.778889
+           }
+       }
+       ], {strokeWidth: 6});
+
+
+     //bubbles, custom popup on hover template
+   map.bubbles([
+     {name: 'Hot', latitude: 40.639722, longitude: 73.778889, radius: 10, fillKey: 'gt50'},
+     {name: 'Chilly', latitude: 70.639722, longitude: 73.778889, radius: 18, fillKey: 'lt50'},
+     {name: 'Hot again', latitude: 30.194444, longitude: -97.67, radius: 8, fillKey: 'gt50'},
+
+   ], {
+     popupTemplate: function(geo, data) {
+       return "<div class='hoverinfo'>It is " + data.name + "</div>";
+     }
+   });
+  });
+ }
+
+   //basic map config with custom fills, mercator projection
+  var map = new Datamap({
+    scope: 'world',
+    element: document.getElementById('container1'),
+    projection: 'mercator',
+    height: 400,
+    width: 900,
+    fills: {
+      defaultFill: '#f0af0a',
+      lt50: 'rgba(0,244,244,0.9)',
+      gt50: 'red'
+    },
+
+    data: {
+      USA: {fillKey: 'lt50' },
+      RUS: {fillKey: 'lt50' },
+      CAN: {fillKey: 'lt50' },
+      BRA: {fillKey: 'gt50' },
+      ARG: {fillKey: 'gt50'},
+      COL: {fillKey: 'gt50' },
+      AUS: {fillKey: 'gt50' },
+      ZAF: {fillKey: 'gt50' },
+      MAD: {fillKey: 'gt50' }
+    }
+  })
+
+
+</script>
