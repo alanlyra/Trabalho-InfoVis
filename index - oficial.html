@@ -14,10 +14,15 @@
   	<title>Trabalho InfoVis</title>
     <link rel="stylesheet" type="text/css" href="/css/default.css"/>
     <link rel="stylesheet" href="css/style-slider.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- I recommend you host this file on your own, since this will change without warning -->
     <script src="http://datamaps.github.io/scripts/datamaps.world.min.js?v=1"></script>
   </head>
@@ -52,6 +57,10 @@
 
 		<main>
 			<header class="main-header">
+
+        <table>
+          <tr>
+            <td>
         <select name="countries" id="countries" style="width:300px;">
           <option value='ad' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
           <option value='ae' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates">United Arab Emirates</option>
@@ -300,9 +309,15 @@
           <option value='zr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zr" data-title="Zaire (former)">Zaire (former)</option>
           <option value='zw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Zimbabwe">Zimbabwe</option>
         </select>
-
+      </td>
+      <td>
         <button class="dropbtn" onclick="javascript:startMap();" style="height: 25px;width: 100px;">Aplicar</button>
+</td>
+<td>
 
+</td>
+</tr>
+</table>
 			</header>
 
 
