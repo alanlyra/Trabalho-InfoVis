@@ -1,6 +1,8 @@
 // <script src="../js/jquery/jquery-1.8.2.min.js"></script>
 // <script src="../json-csv/base-jogadores.js"></script>
 // <script type="text/javascript"> 
+
+    paisClube = {};
     
     //Varre toda a base de dados de jogadores
     for(i=0;i<jogadores.length;i++){
@@ -20,5 +22,5 @@
         paisClube[jogadores[i]['Team']][jogadores[i]['Year']][jogadores[i]['ClubCountry']]++;
         
     }
-    
+
 // </script>
