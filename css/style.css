@@ -1244,7 +1244,7 @@ input {
     border-radius: 7px 7px 7px 7px;
     background-color: #16a085;
     color: white;
-    padding: 8px;
+    /*padding: 8px;*/
     font-size: 14px;
     border: none;
     cursor: pointer;
