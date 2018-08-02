@@ -68,13 +68,16 @@
                 $(function(){
                    for(var key in paisClube){
                           if(key in paises){
-                              $('#countries').append('<option value="' + key + '"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ 'AR' +'" data-title="' + key + '">' + key + '</option>');
-                              console.log('<option value="' + key + '" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'] +'" data-title="' + key + '">' + key + '</option>');
-                          }
-                        
+                            if(key == "Brazil")
+                              $('#countries').append('<option value="' + key + '"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'].toLowerCase() +'" data-title="' + key + ' selected="selected>' + key + '</option>');
+                            else
+                              $('#countries').append('<option value="' + key + '"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'].toLowerCase() +'" data-title="' + key + '">' + key + '</option>');
+                            }
+
                     }
                 });
         </script>
+
         <select name="countries" id="countries" style="width:300px;">
           <!-- <option value="Andorra" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag AD" data-title="Andorra">Andorra</option>
           <option value="United Arab Emirates" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates">United Arab Emirates</option>
@@ -400,7 +403,7 @@
  function startMap() {
   d3.csv("./cities.csv", function(json){
     //sample of the arc plugin
-    
+
     map.arc([
      {
       origin: {
