@@ -64,21 +64,17 @@
         <table>
           <tr>
             <td>
-              <script type="text/javascript">
-
-                for(var key in paisClube){
-                    if(key in paises){
-                        $('#countries').append($('<option>', {
-                            value: key,
-                            // "data-image": "images/msdropdown/icons/blank.gif",
-                            // "data-imagecss": "flag " + paises[key]['sigla'],
-                            // "data-title": key,
-                            text: key
-                        }));
+        <script type="text/javascript">
+                $(function(){
+                   for(var key in paisClube){
+                          if(key in paises){
+                              $('#countries').append('<option value="' + key + '"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ 'AR' +'" data-title="' + key + '">' + key + '</option>');
+                              console.log('<option value="' + key + '" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'] +'" data-title="' + key + '">' + key + '</option>');
+                          }
+                        
                     }
-                  
-                }
-              </script>
+                });
+        </script>
         <select name="countries" id="countries" style="width:300px;">
           <!-- <option value="Andorra" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag AD" data-title="Andorra">Andorra</option>
           <option value="United Arab Emirates" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates">United Arab Emirates</option>
@@ -90,6 +86,7 @@
           <option value="Netherlands Antilles" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag an" data-title="Netherlands Antilles">Netherlands Antilles</option>
           <option value="Angola" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ao" data-title="Angola">Angola</option>
           <option value="Antarctica" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag aq" data-title="Antarctica">Antarctica</option>
+          <option value="Argentina"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag AR" data-title="Argentina">Argentina</option>
           <option value="Argentina" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ar" data-title="Argentina">Argentina</option>
           <option value="American Samoa" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag as" data-title="American Samoa">American Samoa</option>
           <option value="Austria" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag at" data-title="Austria">Austria</option>
