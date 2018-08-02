@@ -153,7 +153,7 @@ main .container, main .container__fluxo-CRC {
       content: ':'; }
   .main-header .titulo-subsecao {
     display: block;
-    height: 26px;
+    /*height: 26px;*/
     line-height: 26px;
     font-size: 30px;
     font-family: "robotobold";
