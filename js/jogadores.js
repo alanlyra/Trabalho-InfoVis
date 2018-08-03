@@ -23,4 +23,11 @@
         
     }
 
+    const ordered = {};
+    Object.keys(paisClube).sort().forEach(function(key) {
+      ordered[key] = paisClube[key];
+    });
+
+    paisClube = ordered;
+
 // </script>

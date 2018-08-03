@@ -49,12 +49,11 @@
                       $(function(){
                          for(var key in paisClube){
                                 if(key in paises){
-                                  if(key == "Brazil")
-                                    $('#countries').append('<option value="' + key + '"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'].toLowerCase() +'" data-title="' + key + ' selected="selected>' + key + '</option>');
-                                  else
-                                    $('#countries').append('<option value="' + key + '"data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'].toLowerCase() +'" data-title="' + key + '">' + key + '</option>');
-                                  }
-
+                                  // if(key == "Brazil")
+                                  //   $('#countries').append('<option value="' + key + '" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'].toLowerCase() +'" data-title="' + key + '" onclick="javascript:startMap();" selected="selected">' + key + '</option>');
+                                  // else
+                                    $('#countries').append('<option value="' + key + '" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag '+ paises[key]['sigla'].toLowerCase() +'" data-title="' + key + '">' + key + '</option>');
+                                }
                           }
                       });
               </script>
@@ -121,41 +120,81 @@
 <script>
 
  function startMap() {
+  var teste = [{
+      "origin": {
+          "latitude": 40.639722,
+          "longitude": 73.778889
+      },
+      "destination": {
+          "latitude": -14.235004,
+          "longitude": -51.92528
+      }
+    },{
+      "origin": {
+          "latitude": 40.639722,
+          "longitude": 73.778889
+      },
+      "destination": {
+          "latitude": -14.235004,
+          "longitude": -51.92528
+      }
+    }];
+
+    latLong = {};
+    final = [];
+    var pais = $("#countries").val();
+
+    for(year in paisClube[pais]){
+        // console.log(year);
+        for(origem in paisClube[pais][year]){
+            latLong["origin"] = {"latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"]};
+            latLong["destination"] = {"latitude": paises[pais]["lat"], "longitude": paises[pais]["lon"]};
+        //     // console.log(latLong);
+            final.push(latLong);
+        }
+        
+    }
+
+    console.log(final);
+  
   d3.csv("./cities.csv", function(json){
     //sample of the arc plugin
 
-    map.arc([
-     {
-      origin: {
-          latitude: 40.639722,
-          longitude: 73.778889
-      },
-      destination: {
-          latitude: -14.235004,
-          longitude: -51.92528
-      }
-    },
-      {
-      origin: {
-          latitude: 70.639722,
-          longitude: 73.778889
-      },
-      destination: {
-          latitude: -14.235004,
-          longitude: -51.92528
-      }
-    },
-    {
-        origin: {
-            latitude: 30.194444,
-            longitude: -97.67
-        },
-        destination: {
-            latitude: -14.235004,
-            longitude: -51.92528
-        }
-    }
-    ], {strokeWidth: 6});
+    map.arc(teste, {strokeWidth: 6});
+
+    // map.arc([
+    //  {
+    //   origin: {
+    //       latitude: 40.639722,
+    //       longitude: 73.778889
+    //   },
+    //   destination: {
+    //       latitude: -14.235004,
+    //       longitude: -51.92528
+    //   }
+    // },
+    //   {
+    //   origin: {
+    //       latitude: 70.639722,
+    //       longitude: 73.778889
+    //   },
+    //   destination: {
+    //       latitude: -14.235004,
+    //       longitude: -51.92528
+    //   }
+    // },
+    // {
+    //     origin: {
+    //         latitude: 30.194444,
+    //         longitude: -97.67
+    //     },
+    //     destination: {
+    //         latitude: -14.235004,
+    //         longitude: -51.92528
+    //     }
+    // }
+    // ], {strokeWidth: 6});
+    // console.log(map.arc);
 
      //bubbles, custom popup on hover template
    map.bubbles([
