@@ -3,7 +3,7 @@ html, body {
   height: 100%; }
 
 body {
-  background-image: url(../images/fundoSistema.png.png); }
+  background-image: url(../images/fundo2.jpg); }
 
 nav ul {
   list-style: none;
@@ -93,14 +93,12 @@ nav ul {
   padding: 20px 0px !important; }
 
 .l-cabecalho {
-  min-height: 30px;
-  border-bottom: 4px solid #16a085;
+  min-height: 70px;
+  /*border-bottom: 4px solid #16a085;*/
   width: 100%;
   position: relative;
   background-color: #1abc9c;
-  background-image: linear-gradient(to top, #16a085 1px, transparent 1px);
-  background-size: 10px 30px;
-  background-repeat: repeat-x;
+  background-image: url(../images/fundo2.jpg);
   margin-bottom: 14px; }
   .l-cabecalho .logo-defensoria {
     position: relative;
