@@ -681,7 +681,7 @@ var paises = {
   },
   "Morocco": {
     "lat": "31.791702",
-    "lon": "-709.262",
+    "lon": "-7.09262",
     "sigla": "MA"
   },
   "Monaco": {
