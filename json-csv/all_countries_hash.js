@@ -46,7 +46,7 @@ var paises = {
   },
   "Antarctica": {
     "lat": "-75.250973",
-    "lon": -0.071389,
+    "lon": "-0.071389",
     "sigla": "AQ"
   },
   "Argentina": {
@@ -141,12 +141,12 @@ var paises = {
   },
   "Brazil": {
     "lat": "-14.235004",
-    "lon": "-5.192528",
+    "lon": "-51.92528",
     "sigla": "BR"
   },
   "Bahamas": {
-    "lat": "2.503428",
-    "lon": "-7.739628",
+    "lat": "25.03428",
+    "lon": "-77.39628",
     "sigla": "BS"
   },
   "Bhutan": {
@@ -171,7 +171,7 @@ var paises = {
   },
   "Belize": {
     "lat": "17.189877",
-    "lon": "-8.849765",
+    "lon": "-88.49765",
     "sigla": "BZ"
   },
   "Canada": {
@@ -206,7 +206,7 @@ var paises = {
   },
   "C%uFFFDte d'Ivoire": {
     "lat": "7.539989",
-    "lon": -554.708,
+    "lon": "-5.54708",
     "sigla": "CI"
   },
   "Cook Islands": {
@@ -275,7 +275,7 @@ var paises = {
     "sigla": "DJ"
   },
   "Denmark": {
-    "lat": "5.626392",
+    "lat": "56.26392",
     "lon": "9.501785",
     "sigla": "DK"
   },
@@ -321,16 +321,16 @@ var paises = {
   },
   "Spain": {
     "lat": "40.463667",
-    "lon": -374.922,
+    "lon": "-3.74922",
     "sigla": "ES"
   },
   "Ethiopia": {
-    "lat": 9.145,
+    "lat": "9.145",
     "lon": "40.489673",
     "sigla": "ET"
   },
   "Finland": {
-    "lat": "6.192411",
+    "lat": "61.92411",
     "lon": "25.748151",
     "sigla": "FI"
   },
@@ -360,7 +360,7 @@ var paises = {
     "sigla": "FR"
   },
   "Gabon": {
-    "lat": -0.803689,
+    "lat": "-0.803689",
     "lon": "11.609444",
     "sigla": "GA"
   },
@@ -485,8 +485,8 @@ var paises = {
     "sigla": "HN"
   },
   "Croatia": {
-    "lat": 45.1,
-    "lon": 15.2,
+    "lat": "45.1",
+    "lon": "15.2",
     "sigla": "HR"
   },
   "Haiti": {
@@ -500,13 +500,13 @@ var paises = {
     "sigla": "HU"
   },
   "Indonesia": {
-    "lat": -0.789275,
+    "lat": "-0.789275",
     "lon": "113.921327",
     "sigla": "ID"
   },
   "Ireland": {
-    "lat": "5.341291",
-    "lon": -824.389,
+    "lat": "53.41291",
+    "lon": "-8.24389",
     "sigla": "IE"
   },
   "Israel": {
@@ -545,13 +545,13 @@ var paises = {
     "sigla": "IS"
   },
   "Italy": {
-    "lat": "4.187194",
-    "lon": "1.256738",
+    "lat": "41.87194",
+    "lon": "12.56738",
     "sigla": "IT"
   },
   "Jersey": {
     "lat": "49.214439",
-    "lon": -213.125,
+    "lon": "-2.13125",
     "sigla": "JE"
   },
   "Jamaica": {
@@ -570,7 +570,7 @@ var paises = {
     "sigla": "JP"
   },
   "Kenya": {
-    "lat": -0.023559,
+    "lat": "-0.023559",
     "lon": "37.906193",
     "sigla": "KE"
   },
@@ -640,7 +640,7 @@ var paises = {
     "sigla": "LC"
   },
   "Liechtenstein": {
-    "lat": 47.166,
+    "lat": "47.166",
     "lon": "9.555373",
     "sigla": "LI"
   },
@@ -675,13 +675,13 @@ var paises = {
     "sigla": "LV"
   },
   "Libya": {
-    "lat": 263.351,
+    "lat": "263.351",
     "lon": "17.228331",
     "sigla": "LY"
   },
   "Morocco": {
     "lat": "31.791702",
-    "lon": -709.262,
+    "lon": "-709.262",
     "sigla": "MA"
   },
   "Monaco": {
@@ -835,7 +835,7 @@ var paises = {
     "sigla": "NP"
   },
   "Nauru": {
-    "lat": -0.522778,
+    "lat": "-0.522778",
     "lon": "166.931503",
     "sigla": "NR"
   },
@@ -915,7 +915,7 @@ var paises = {
     "sigla": "PT"
   },
   "Palau": {
-    "lat": 751.498,
+    "lat": "751.498",
     "lon": "13.458252",
     "sigla": "PW"
   },
@@ -936,7 +936,7 @@ var paises = {
   },
   "Romania": {
     "lat": "45.943161",
-    "lon": "2.496676",
+    "lon": "24.96676",
     "sigla": "RO"
   },
   "Serbia": {
@@ -945,7 +945,7 @@ var paises = {
     "sigla": "RS"
   },
   "Russia": {
-    "lat": "6.152401",
+    "lat": "61.52401",
     "lon": "105.318756",
     "sigla": "RU"
   },
@@ -960,7 +960,7 @@ var paises = {
     "sigla": "SA"
   },
   "Solomon Islands": {
-    "lat": -964.571,
+    "lat": "-964.571",
     "lon": "160.156194",
     "sigla": "SB"
   },
@@ -1029,8 +1029,8 @@ var paises = {
     "lon": "-56.027783",
     "sigla": "SR"
   },
-  "S%uFFFDo Tom%uFFFD and Pr%uFFFDncipe": {
-    "lat": 0.18636,
+  "Sao Tome and Principe": {
+    "lat": "0.18636",
     "lon": "6.613081",
     "sigla": "ST"
   },
@@ -1066,7 +1066,7 @@ var paises = {
   },
   "Togo": {
     "lat": "8.619543",
-    "lon": 0.824782,
+    "lon": "0.824782",
     "sigla": "TG"
   },
   "Thailand": {
@@ -1125,7 +1125,7 @@ var paises = {
     "sigla": "TW"
   },
   "Tanzania": {
-    "lat": "-6.369028",
+    "lat": "-63.69028",
     "lon": "34.888822",
     "sigla": "TZ"
   },
@@ -1135,12 +1135,12 @@ var paises = {
     "sigla": "UA"
   },
   "Uganda": {
-    "lat": "1.373333",
+    "lat": "13.73333",
     "lon": "32.290275",
     "sigla": "UG"
   },
   "United States": {
-    "lat": "3.709024",
+    "lat": "37.09024",
     "lon": "-95.712891",
     "sigla": "US"
   },
@@ -1165,8 +1165,8 @@ var paises = {
     "sigla": "VC"
   },
   "Venezuela": {
-    "lat": 642.375,
-    "lon": "-6.658973",
+    "lat": "6.42375",
+    "lon": "-66.58973",
     "sigla": "VE"
   },
   "British Virgin Islands": {
@@ -1210,7 +1210,7 @@ var paises = {
     "sigla": "YE"
   },
   "Mayotte": {
-    "lat": -128.275,
+    "lat": "-128.275",
     "lon": "45.166244",
     "sigla": "YT"
   },
