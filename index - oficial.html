@@ -149,8 +149,9 @@
         for(origem in paisClube[pais][year]){
             latLong["origin"] = {"latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"]};
             latLong["destination"] = {"latitude": paises[pais]["lat"], "longitude": paises[pais]["lon"]};
-        //     // console.log(latLong);
+            console.log(paises[origem]["lat"] + " " + paises[origem]["lon"]);
             final.push(latLong);
+            latLong = {};
         }
         
     }
@@ -160,7 +161,7 @@
   d3.csv("./cities.csv", function(json){
     //sample of the arc plugin
 
-    map.arc(teste, {strokeWidth: 6});
+    map.arc(final, {strokeWidth: 3});
 
     // map.arc([
     //  {
