@@ -195,7 +195,7 @@ var paises = {
     "sigla": "CF"
   },
   "Congo [Republic]": {
-    "lat": -0.228021,
+    "lat": "-0.228021",
     "lon": "15.827659",
     "sigla": "CG"
   },

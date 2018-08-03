@@ -103,6 +103,7 @@
 	<!-- <script src="js/jquery.bundle.min.js"></script> -->
 </body>
 
+
 <!-- <msdropdown> -->
 <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
 <script src="js/msdropdown/jquery.dd.min.js"></script>
@@ -119,6 +120,26 @@
 <script>
 
  function startMap() {
+  var teste = [{
+      "origin": {
+          "latitude": 40.639722,
+          "longitude": 73.778889
+      },
+      "destination": {
+          "latitude": -14.235004,
+          "longitude": -51.92528
+      }
+    },{
+      "origin": {
+          "latitude": 40.639722,
+          "longitude": 73.778889
+      },
+      "destination": {
+          "latitude": -14.235004,
+          "longitude": -51.92528
+      }
+    }];
+
     latLong = {};
     final = [];
     var pais = $("#countries").val();
@@ -126,6 +147,7 @@
     bubblesFinal = [];
 
     for(year in paisClube[pais]){
+        // console.log(year);
 
         for(origem in paisClube[pais][year]){
 
@@ -145,12 +167,49 @@
         }
 
     }
+
     console.log(bubblesFinal);
 
   d3.csv("", function(json){
+    //sample of the arc plugin
 
-   map.arc(final);
+    map.arc(final);
 
+    // map.arc([
+    //  {
+    //   origin: {
+    //       latitude: 40.639722,
+    //       longitude: 73.778889
+    //   },
+    //   destination: {
+    //       latitude: -14.235004,
+    //       longitude: -51.92528
+    //   }
+    // },
+    //   {
+    //   origin: {
+    //       latitude: 70.639722,
+    //       longitude: 73.778889
+    //   },
+    //   destination: {
+    //       latitude: -14.235004,
+    //       longitude: -51.92528
+    //   }
+    // },
+    // {
+    //     origin: {
+    //         latitude: 30.194444,
+    //         longitude: -97.67
+    //     },
+    //     destination: {
+    //         latitude: -14.235004,
+    //         longitude: -51.92528
+    //     }
+    // }
+    // ], {strokeWidth: 6});
+    // console.log(map.arc);
+
+     //bubbles, custom popup on hover template
    map.bubbles(bubblesFinal, {
      popupTemplate: function(geo, data) {
        return "<div class='hoverinfo' style='text-align: center'>"
@@ -165,6 +224,58 @@
   });
  }
 
+ // function startMap2() {
+ //      d3.csv("./cities.csv", function(json){
+ //       //sample of the arc plugin
+ //       map.arc([
+ //        {
+ //         origin: {
+ //             latitude: 73.778889,
+ //             longitude: 40.639722
+ //         },
+ //         destination: {
+ //           latitude: 70.639722,
+ //           longitude: 73.778889
+ //         }
+ //       },
+ //         {
+ //         origin: {
+ //             latitude: 30.194444,
+ //             longitude: 73.778889
+ //         },
+ //         destination: {
+ //             latitude: 70.639722,
+ //             longitude: 73.778889
+ //         }
+ //       },
+ //       {
+ //           origin: {
+ //               latitude: 30.194444,
+ //               longitude: -97.67
+ //           },
+ //           destination: {
+ //             latitude: 70.639722,
+ //             longitude: 73.778889
+ //           }
+ //       }
+ //       ], {strokeWidth: 6});
+
+
+ //     //bubbles, custom popup on hover template
+ //   map.bubbles([
+ //     {name: 'Hot', latitude: 40.639722, longitude: 73.778889, radius: 10, fillKey: 'gt50'},
+ //     {name: 'Chilly', latitude: 70.639722, longitude: 73.778889, radius: 18, fillKey: 'lt50'},
+ //     {name: 'Hot again', latitude: 30.194444, longitude: -97.67, radius: 8, fillKey: 'gt50'},
+
+ //   ], {
+ //     popupTemplate: function(geo, data) {
+ //       return "<div class='hoverinfo'>It is " + data.name + "</div>";
+ //     }
+ //   });
+ //  });
+ // }
+
+   //basic map config with custom fills, mercator projection
   var map = new Datamap({
     scope: 'world',
     element: document.getElementById('container1'),
@@ -195,5 +306,6 @@
       // MAD: {fillKey: 'gt50' }
     }
   })
+
 
 </script>
