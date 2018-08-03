@@ -154,7 +154,7 @@
             final.push(latLong);
             latLong = {};
 
-            bubbles = {"name": origem, "latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"], radius: 10, fillKey: 'gt50'};
+            bubbles = {"name": origem, "latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"], radius: paisClube[pais][year][origem], fillKey: 'gt50', borderWidth: 0.7, "copa":year + "'s World Cup", "qtdJogadores": paisClube[pais][year][origem]};
             bubblesFinal.push(bubbles);
             bubbles = {}
         }
@@ -166,7 +166,7 @@
   d3.csv("./cities.csv", function(json){
     //sample of the arc plugin
 
-    map.arc(final, {strokeWidth: 3});
+    map.arc(final, {strokeWidth: 1});
 
     // map.arc([
     //  {
@@ -205,62 +205,68 @@
      //bubbles, custom popup on hover template
    map.bubbles(bubblesFinal, {
      popupTemplate: function(geo, data) {
-       return "<div class='hoverinfo'>" + data.name + "</div>";
+       return "<div class='hoverinfo' style='text-align: center'>"
+       + data.copa +
+       "<br/><b>"
+       + data.name + 
+       "</b><br/>"
+       + data.qtdJogadores +
+       " players</div>";
      }
    });
   });
  }
 
- function startMap2() {
-      d3.csv("./cities.csv", function(json){
-       //sample of the arc plugin
-       map.arc([
-        {
-         origin: {
-             latitude: 73.778889,
-             longitude: 40.639722
-         },
-         destination: {
-           latitude: 70.639722,
-           longitude: 73.778889
-         }
-       },
-         {
-         origin: {
-             latitude: 30.194444,
-             longitude: 73.778889
-         },
-         destination: {
-             latitude: 70.639722,
-             longitude: 73.778889
-         }
-       },
-       {
-           origin: {
-               latitude: 30.194444,
-               longitude: -97.67
-           },
-           destination: {
-             latitude: 70.639722,
-             longitude: 73.778889
-           }
-       }
-       ], {strokeWidth: 6});
+ // function startMap2() {
+ //      d3.csv("./cities.csv", function(json){
+ //       //sample of the arc plugin
+ //       map.arc([
+ //        {
+ //         origin: {
+ //             latitude: 73.778889,
+ //             longitude: 40.639722
+ //         },
+ //         destination: {
+ //           latitude: 70.639722,
+ //           longitude: 73.778889
+ //         }
+ //       },
+ //         {
+ //         origin: {
+ //             latitude: 30.194444,
+ //             longitude: 73.778889
+ //         },
+ //         destination: {
+ //             latitude: 70.639722,
+ //             longitude: 73.778889
+ //         }
+ //       },
+ //       {
+ //           origin: {
+ //               latitude: 30.194444,
+ //               longitude: -97.67
+ //           },
+ //           destination: {
+ //             latitude: 70.639722,
+ //             longitude: 73.778889
+ //           }
+ //       }
+ //       ], {strokeWidth: 6});
 
 
-     //bubbles, custom popup on hover template
-   map.bubbles([
-     {name: 'Hot', latitude: 40.639722, longitude: 73.778889, radius: 10, fillKey: 'gt50'},
-     {name: 'Chilly', latitude: 70.639722, longitude: 73.778889, radius: 18, fillKey: 'lt50'},
-     {name: 'Hot again', latitude: 30.194444, longitude: -97.67, radius: 8, fillKey: 'gt50'},
+ //     //bubbles, custom popup on hover template
+ //   map.bubbles([
+ //     {name: 'Hot', latitude: 40.639722, longitude: 73.778889, radius: 10, fillKey: 'gt50'},
+ //     {name: 'Chilly', latitude: 70.639722, longitude: 73.778889, radius: 18, fillKey: 'lt50'},
+ //     {name: 'Hot again', latitude: 30.194444, longitude: -97.67, radius: 8, fillKey: 'gt50'},
 
-   ], {
-     popupTemplate: function(geo, data) {
-       return "<div class='hoverinfo'>It is " + data.name + "</div>";
-     }
-   });
-  });
- }
+ //   ], {
+ //     popupTemplate: function(geo, data) {
+ //       return "<div class='hoverinfo'>It is " + data.name + "</div>";
+ //     }
+ //   });
+ //  });
+ // }
 
    //basic map config with custom fills, mercator projection
   var map = new Datamap({
