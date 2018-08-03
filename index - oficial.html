@@ -149,12 +149,16 @@
     for(year in paisClube[pais]){
         // console.log(year);
         for(origem in paisClube[pais][year]){
-            latLong["origin"] = {"latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"]};
-            latLong["destination"] = {"latitude": paises[pais]["lat"], "longitude": paises[pais]["lon"]};
-            final.push(latLong);
-            latLong = {};
 
-            bubbles = {"name": origem, "latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"], radius: paisClube[pais][year][origem], fillKey: 'gt50', borderWidth: 0.7, "copa":year + "'s World Cup", "qtdJogadores": paisClube[pais][year][origem]};
+            if(origem != pais){
+                latLong["origin"] = {"latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"]};
+                latLong["destination"] = {"latitude": paises[pais]["lat"], "longitude": paises[pais]["lon"]};
+                latLong["options"] = {"strokeWidth": (paisClube[pais][year][origem]/23)*10}
+                final.push(latLong);
+                latLong = {};
+            }
+            
+            bubbles = {"name": origem, "latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"], radius: (paisClube[pais][year][origem]/23)*15, fillKey: 'gt50', borderWidth: 0.7, "copa":year + "'s World Cup", "qtdJogadores": paisClube[pais][year][origem]};
             bubblesFinal.push(bubbles);
             bubbles = {}
         }
@@ -166,7 +170,7 @@
   d3.csv("", function(json){
     //sample of the arc plugin
 
-    map.arc(final, {strokeWidth: 1});
+    map.arc(final);
 
     // map.arc([
     //  {
@@ -273,24 +277,30 @@
     scope: 'world',
     element: document.getElementById('container1'),
     projection: 'mercator',
-    height: 400,
+    height: 600,
     width: 900,
+    geographyConfig: {
+            highlightOnHover: false,
+            popupOnHover: false
+    },
     fills: {
-      defaultFill: '#f0af0a',
-      lt50: 'rgba(0,244,244,0.9)',
+      // defaultFill: '#f0af0a',
+      defaultFill: '#b1dad2',
+      // lt50: 'rgba(0,244,244,0.9)',
+      lt50: 'rgba(20,20,20,0.9)',
       gt50: 'red'
     },
 
     data: {
-      USA: {fillKey: 'lt50' },
-      RUS: {fillKey: 'lt50' },
-      CAN: {fillKey: 'lt50' },
-      BRA: {fillKey: 'gt50' },
-      ARG: {fillKey: 'gt50'},
-      COL: {fillKey: 'gt50' },
-      AUS: {fillKey: 'gt50' },
-      ZAF: {fillKey: 'gt50' },
-      MAD: {fillKey: 'gt50' }
+      // USA: {fillKey: 'lt50' },
+      // RUS: {fillKey: 'lt50' },
+      // CAN: {fillKey: 'lt50' },
+      // BRA: {fillKey: 'gt50' },
+      // ARG: {fillKey: 'gt50'},
+      // COL: {fillKey: 'gt50' },
+      // AUS: {fillKey: 'gt50' },
+      // ZAF: {fillKey: 'gt50' },
+      // MAD: {fillKey: 'gt50' }
     }
   })
 
