@@ -148,8 +148,10 @@
 
     for(year in paisClube[pais]){
         // console.log(year);
+
         for(origem in paisClube[pais][year]){
 
+          if(paises[origem]){
             if(origem != pais){
                 latLong["origin"] = {"latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"]};
                 latLong["destination"] = {"latitude": paises[pais]["lat"], "longitude": paises[pais]["lon"]};
@@ -157,10 +159,11 @@
                 final.push(latLong);
                 latLong = {};
             }
-            
+
             bubbles = {"name": origem, "latitude": paises[origem]["lat"], "longitude": paises[origem]["lon"], radius: ((paisClube[pais][year][origem]/23)*15)+2, fillKey: 'gt50', borderWidth: 0.7, "copa":year + "'s World Cup", "qtdJogadores": paisClube[pais][year][origem]};
             bubblesFinal.push(bubbles);
             bubbles = {}
+          }
         }
 
     }
@@ -212,7 +215,7 @@
        return "<div class='hoverinfo' style='text-align: center'>"
        + data.copa +
        "<br/><b>"
-       + data.name + 
+       + data.name +
        "</b><br/>"
        + data.qtdJogadores +
        " players</div>";
