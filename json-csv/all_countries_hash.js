@@ -225,7 +225,7 @@ var paises = {
     "sigla": "CM"
   },
   "China": {
-    "lat": "3.586166",
+    "lat": "35.86166",
     "lon": "104.195397",
     "sigla": "CN"
   },
