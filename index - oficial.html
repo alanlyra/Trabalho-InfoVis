@@ -125,6 +125,16 @@
     var bubbles = {};
     bubblesFinal = [];
 
+    for(paisI in paisClube){
+      for(year in paisClube[paisI]){
+        for(origem in paisClube[paisI][year]){
+          if(!paises[origem]){
+            console.log(origem);
+          }
+        }
+      }
+    }
+
     for(year in paisClube[pais]){
 
         for(origem in paisClube[pais][year]){

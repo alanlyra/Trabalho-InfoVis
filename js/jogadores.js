@@ -6,6 +6,7 @@
     
     //Varre toda a base de dados de jogadores
     for(i=0;i<jogadores.length;i++){
+
         //Caso não exista, cria um array com a seleção do jogador
         if(!(jogadores[i]['Team'] in paisClube))
             paisClube[jogadores[i]['Team']] = {}
@@ -13,7 +14,7 @@
         //Caso não exista, cria um array dentro da seleção do jogador com o ano da copa que o jogador participou
         if(!(jogadores[i]['Year'] in paisClube[jogadores[i]['Team']]))
             paisClube[jogadores[i]['Team']][jogadores[i]['Year']] = {};
-
+        
         //Caso não exista, cria um array dentro do ano da copa com o país do clube que o jogador jogava
         if(!(jogadores[i]['ClubCountry'] in paisClube[jogadores[i]['Team']][jogadores[i]['Year']]))
             paisClube[jogadores[i]['Team']][jogadores[i]['Year']][jogadores[i]['ClubCountry']] = 0;

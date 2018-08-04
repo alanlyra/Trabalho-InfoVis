@@ -199,12 +199,17 @@ var paises = {
     "lon": "15.827659",
     "sigla": "CG"
   },
+    "Congo": {
+    "lat": "-0.228021",
+    "lon": "15.827659",
+    "sigla": "CG"
+  },
   "Switzerland": {
     "lat": "46.818188",
     "lon": "8.227512",
     "sigla": "CH"
   },
-  "C%uFFFDte d'Ivoire": {
+  "Côte d'Ivoire": {
     "lat": "7.539989",
     "lon": "-5.54708",
     "sigla": "CI"
@@ -264,7 +269,22 @@ var paises = {
     "lon": "15.472962",
     "sigla": "CZ"
   },
+  "Czechoslovakia": {
+    "lat": "49.817492",
+    "lon": "15.472962",
+    "sigla": "CZ"
+  },
   "Germany": {
+    "lat": "51.165691",
+    "lon": "10.451526",
+    "sigla": "DE"
+  },
+  "East Germany": {
+    "lat": "51.165691",
+    "lon": "10.451526",
+    "sigla": "DE"
+  },
+  "West Germany": {
     "lat": "51.165691",
     "lon": "10.451526",
     "sigla": "DE"
@@ -375,8 +395,8 @@ var paises = {
     "sigla": "GB"
   },
    "Scotland": {
-    "lat": "55.378051",
-    "lon": "-3.435973",
+    "lat": "56.071739",
+    "lon": "-3.452151",
     "sigla": "GB"
   },
   "Grenada": {
@@ -504,9 +524,24 @@ var paises = {
     "lon": "113.921327",
     "sigla": "ID"
   },
-  "Ireland": {
+  "Dutch East Indies": {
+    "lat": "-0.789275",
+    "lon": "113.921327",
+    "sigla": "ID"
+  },
+  "Northern Ireland": {
     "lat": "53.41291",
     "lon": "-8.24389",
+    "sigla": "IE"
+  },
+  "Wales": {
+    "lat": "53.34061",
+    "lon": "-1.28162",
+    "sigla": "GB"
+  },
+  "Ireland": {
+    "lat": "55.204540",
+    "lon": "-6.252594",
     "sigla": "IE"
   },
   "Israel": {
@@ -944,7 +979,22 @@ var paises = {
     "lon": "21.005859",
     "sigla": "RS"
   },
+  "Yugoslavia": {
+    "lat": "44.016521",
+    "lon": "21.005859",
+    "sigla": "RS"
+  },
+  "Serbia and Montenegro": {
+    "lat": "44.016521",
+    "lon": "21.005859",
+    "sigla": "RS"
+  },
   "Russia": {
+    "lat": "61.52401",
+    "lon": "105.318756",
+    "sigla": "RU"
+  },
+  "Soviet Union": {
     "lat": "61.52401",
     "lon": "105.318756",
     "sigla": "RU"
@@ -1228,5 +1278,10 @@ var paises = {
     "lat": "-19.015438",
     "lon": "29.154857",
     "sigla": "ZW"
+  },
+  "": {
+    "lat": "-50",
+    "lon": "0",
+    "sigla": "ZM"
   }
 }
